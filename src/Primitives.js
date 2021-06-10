@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import { Box, View } from 'react-vr';
+import React from 'react';
+import { View, Box, Cylinder, Sphere, StyleSheet } from 'react-vr';
 
-class Primitives extends Component {
-    render() {
-        return (
-            <View>
-                <Box
-                    dimWidth = {0.5}
-                    dimDepth = {0.5}
-                    dimHeight = {0.3}
-                    style = {{
-                        color: 'yellow'
-                    }}
-                />
-            </View>
-        );
-    }
-}
-
-export default Primitives;
+export default class App extends React.Component {
+  render() {
+    return (
+      <View>
+      <Cylinder
+        radiusTop={0.5}
+        radiusBottom={0.5}
+        dimHeight={2}
+        segments={12}
+        style={{
+          transform: [{translate: [-0.5, 2, -5]}]
+        }}
+      />
+      </View>
+    );
+  }
+};
