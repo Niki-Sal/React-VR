@@ -4,12 +4,15 @@ import {
   Pano,
   Text,
   View,
+  AmbientLight,
 } from 'react-vr';
+import Primitive from './Primitives';
 
 export default class App extends React.Component {
   render() {
     return (
       <View>
+        <AmbientLight intensity = {2.5} />
         <Pano source={asset('interior.jpg')}/>
         <Text
           style={{
@@ -25,6 +28,7 @@ export default class App extends React.Component {
           }}>
           React
         </Text>
+        <Primitive/>
       </View>
     );
   }
